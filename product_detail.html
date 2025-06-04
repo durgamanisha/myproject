@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+{% block content %}
+<div class="card">
+    <img src="{{ product.image.url }}" class="card-img-top"  alt="{{ product.name }}" style="height:100px;width:100px">
+    <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <h4>₹{{ product.price }}</h4>
+        <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-success">Add to Cart</a>
+        <a href="{% url 'buy_now' product.pk %}" class="btn btn-warning">Buy It</a>
+
+    </div>
+</div>
+{% endblock %}
